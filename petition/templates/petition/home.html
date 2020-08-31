@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="./animate.css">    
+</head>
+
+<style>
+    *{
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .head {
+    margin-top: 60px;
+    text-align: center;
+    margin-bottom: 40px;
+    }
+
+    .head h1{
+    color: rgb(112, 0, 0);
+    font-weight: bolder;
+    transition: 0.5s ease;
+    margin-bottom: 30px;
+    }
+
+    .head p{
+        text-align: center;
+    }
+
+    .para{
+        background: black;
+        color: white;
+        padding: 20px 20px;
+        border:5px solid rgb(0, 180, 180);
+        box-sizing: border-box;
+    }
+
+    .cards{
+        margin-top:30px;
+        margin-bottom: 30px;
+    }
+    .cards .box{
+        padding: 30px;
+        background: white;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        border-radius: 15px;
+        margin: auto;
+        margin-top: 40px;    
+    }
+
+    .box h2{
+        color: rgb(0, 83, 83);
+    }
+    .cards .box .box-sub{
+        display: flex;
+    }
+
+    .cards .box .box-sub p{
+        color: rgb(104, 104, 104);
+    }
+
+</style>
+
+<body>
+    <div class="head">
+        <h1 class="container animated bounceIn">Fee Reduction requests from Students</h1>
+        <div class="para">
+            <p data-aos="fade-up">Hello Sir this is from all the students.. As you know this pendamic was not same for all of us. Many of us are facing financial crisis Even Now..! 
+                and also in past year we have not used the <b>College and Hostel Resourses Completely</b>
+                even the online class we not conducted completely if conducted they were also not regular and complete. 
+                So Sir please do consider the following requests by all the students and help us by reducing the College and Hostel Fee 
+            </p>
+            <p data-aos="fade-up"><b>Student USN are not provided just to get the true Responses from everyone without any hesitations</b></p>
+            <p data-aos="fade-up">Students who did not wish to provide their names are mentioned as <b>Unknown</b></p>
+        </div>    
+    </div>
+    <hr>
+    <div class="cards container">
+        <h2 class="text-center" data-aos="fade-Up" style="color: black;">{{count}} Requests</h2>
+        {% for entry in responses %}
+            <div class="box col-lg-7"  data-aos="fade-up">
+                <div class="box-head">
+                    <h2>{{entry.name}}</h2>
+                    <div class="box-sub">
+                        <p class="mr-5">{{entry.year}} Year</p>
+                        <p class="mx-5">{{entry.stay}}</p>
+                    </div>
+                </div>
+                <!-- <hr> -->
+                <div class="msg"  style="color: black;">
+                    <p>
+                        {{entry.your_view_about_fee}}
+                    </p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    
+</body>
+</html>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>

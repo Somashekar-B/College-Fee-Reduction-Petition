@@ -1,0 +1,105 @@
+{% load static %}
+{% load crispy_forms_tags %}
+{% load materializecss %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDMCET Students Petition Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="./form.css" rel="stylesheet" type="text/css">
+</head>
+
+<style>
+    *{
+    font-family: 'Roboto', sans-serif;
+}
+
+.head {
+    /* background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('/media/photos/pngtree-cool-game-peripherals-background-material-image_344305.jpg'); */
+    background-size: cover;
+    background-position: inherit;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+
+
+.head h1{
+    color: rgb(255, 35, 35);
+    font-weight: bolder;
+    transition: 0.5s ease;
+}
+
+.head p{
+    text-align: center;
+}
+
+.form {
+  width: 100%;
+  margin: auto; 
+  /* box-shadow: 2px 0 10px black;  */
+  padding: 20px 40px;
+  margin-bottom: 50px;
+  margin-top: 80px;
+  transition: 0.5s ease;
+} 
+
+.img{
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    width: 100%;
+}
+
+@media screen and (max-width: 600px){
+    .head h1{
+        font-size: 5vw;
+    }
+}
+
+</style>
+
+<body>
+    <div class="content">
+        <div class="head" data-aos="fade-up">
+            <div class="container">
+                <h1 class="animated fadeIn">Petition Form About Reduction Of College and Hostel Fee</h1>
+                <hr>
+                <p>Since majority of our families are financially suffered a lot during this pandemic in one or the other way. So that here is the form to fill out to convey the request for <b>College and Hostel Fee Reduction </b>To the College </p>
+                <p>Without any hesitation fill out your views in the message section given below honestly</p>    
+            </div>
+        </div>
+        <hr>
+        <div class="form container" data-aos="fade-up">
+            <div class="row">
+                <!-- <div class="img col-lg-6">
+                    <img src="/media/photos/undraw_spreadsheet_69ax.jpg" class="col-lg-12 m-auto">
+                </div> -->
+                <div class="formm col-lg-12">
+                    <h6 class="text-center"><b> *Change Name To your Name if you wish or keep It Unknown</b></h6><br> 
+                    <form method="post" enctype="multipart/form-data">
+                        
+                        {%csrf_token%}
+                        <fieldset class="form-group">
+                            {{ form|crispy}}
+                        </fieldset>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-outline-success ml-4" value="Submit">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>        
+    </div>
+</body>
+</html>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
